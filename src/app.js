@@ -1,5 +1,5 @@
-import './index.css';
-import helper from './helper/helper'
+// import './index.css';
+import helper from './js/helper'
 
 function a() {
   return helper(1,2);
