@@ -11,7 +11,7 @@ module.exports = (env, options) => {
     mode: isProduction ? 'production' : 'development',
     devtool: isProduction ? 'none' : 'source-map',
     watch: !isProduction,
-    entry: ['./src/app.js', './src/sass/style.scss'],
+    entry: ['./src/js/app.js'],
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main.js'
@@ -30,13 +30,17 @@ module.exports = (env, options) => {
         }, {
           test: /\.scss$/,
           use: [
-            MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
+            'css-loader', 'sass-loader'
           ]
         }, {
           test: /\.(png|svg|jpe?g|gif)$/,
           use: [
             {
               loader: 'file-loader',
+              options:{
+                name: '[path][name].[ext]',
+                esModule: false
+              }
             }
           ]
         },

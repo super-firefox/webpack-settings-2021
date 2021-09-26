@@ -1,3 +1,6 @@
-body {
-    background-color: aquamarine;
-}
+@charset 'utf-8';
+
+@import '../../node_modules/normalize-scss/sass/normalize/import-now';
+@import 'abstract/constants';
+
+@import 'base/base-setting';
